@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/* CSS Document */
+body{
+    background-color: rgb(7, 7, 7);
+    background-image: url("../images/backgroundstars.jpg");}
+/********the following rules are for my structure tags*********/
+#container{
+    width:1000px;
+    padding:2%;
+    margin:0 auto;
+}
+
+header{
+    background-color: black;
+	color: white;
+    text-align: center;
+    padding:.5rem;
+    font-size:1.5em;
+    font-family: monospace;
+}
+main{
+    font-family: monospace
+    
+
+}
+section{
+   padding:1em;/*the padding is the same for article and footer so everything is lined up*/
+   background-color: slategray;
+}
+
+article{
+    padding:1em;
+    background-color:slategray;
+    overflow: auto;/*this rule is needed for this container to always resize around the floated image*/   
+}
+
+footer{
+    background-color: slategray;
+    color:red;
+    padding:1em;
+}
+
+/*********these tags are for content on the page***************/
+
+.about{
+font-size: 25px;
+text-align: center;
+text-transform: uppercase;
+color:rgb(252, 3, 3);
+}
+
+h1{
+    font-weight:bold;
+    font-family: monospace;
+    font-size:1.5em;
+}
+
+h2{
+    font-family: monospace;
+}
+
+h3{
+    font-size:1.5em;
+    color:rgb(252, 2, 2);
+    font-weight:bold; 
+    line-height:2em;
+}
+
+h4{
+    font-size:1.2em;
+    color:rgb(252, 4, 4);
+    font-weight:bold;
+    line-height:1.5em;
+    display:block;
+    padding:.5em 0;
+}
+
+p{
+    line-height:1.5em;
+}
+
+/********** The following class is for the paragraphs for the "About Me" section*****/
+.important{
+font-size: 25px;
+}
+
+ol{
+    display:block;
+    padding-left:2em;
+    font-size:1.2em;
+    color:rgb(252, 3, 3);
+}
+li a{
+    color:rgb(252, 251, 251);
+}
+
+img{
+   width: 50%;
+   float: left;
+}
+
+hr{
+    color:rgb(253, 4, 4);
+}
