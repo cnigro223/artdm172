@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Changing the DOM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+    <main>
+        <h1>Architecture Photos</h1>
+        <h2>Scroll Down to see the beauty of Architecture!</h2>
+
+        <div class="grid row">
+            <div class="column">
+                <img src="images/building1.jpg" alt="Building 1" onclick="exImg(this);">
+            </div>
+            <div class="column">
+                <img src="images/building2.jpg" alt="Building 2" onclick="exImg(this);">
+            </div>
+            <div class="column">
+                <img src="images/building3.jpg" alt="Building 3" onclick="exImg(this);">
+            </div>
+            <div class="column">
+                <img src="images/building4.jpg" alt="Building 4" onclick="exImg(this);">
+            </div>
+            <div class="column">
+                <img src="images/building5.jpg" alt="Building 5" onclick="exImg(this);">
+            </div>
+            <div class="column">
+                <img src="images/building6.jpg" alt="Building 6" onclick="exImg(this);">
+            </div>
+            <div class="column">
+                <img src="images/building7.jpg" alt="Building 7" onclick="exImg(this);">
+            </div>
+            <div class="column">
+                <img src="images/building8.jpg" alt="Building 8" onclick="exImg(this);">
+            </div>
+            <div class="column">
+                <img src="images/building9.jpg" alt="Building 9" onclick="exImg(this);">
+            </div>
+            <div class="column">
+                <img src="images/building10.jpg" alt="Building 10" onclick="exImg(this);">
+            </div>
+            <div class="column">
+                <img src="images/building11.jpg" alt="Building 11" onclick="exImg(this);">
+            </div>
+            <div class="column">
+                <img src="images/building12.jpg" alt="Building 12" onclick="exImg(this);">
+            </div>
+        </div>
+
+        <div class="container">
+            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+            <img id="proportions" style="width:80%">
+            <div id="imagechoice"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
