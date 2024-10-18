@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Image Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="#" data-album="Jungle">Jungle</a></li>
+                <li><a href="#" data-album="DeepSea">Deep Sea</a></li>
+                <li><a href="#" data-album="Mountains">Mountains</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="gallery" id="Jungle">
+            <div class="slider">
+                <div class="slides">
+                    <img src="images/jungle/jungle1.jpg" alt="Jungle Image 1" class="current">
+                    <img src="images/jungle/jungle2.jpg" alt="Jungle Image 2">
+                    <img src="images/jungle/jungle3.jpg" alt="Jungle Image 3">
+                    <img src="images/jungle/jungle4.jpg" alt="Jungle Image 4">
+                    <img src="images/jungle/jungle5.jpg" alt="Jungle Image 5">
+                    <img src="images/jungle/jungle6.jpg" alt="Jungle Image 6">
+                </div>
+                <figcaption></figcaption>
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
+            </div>
+        </div>
+
+        <div class="gallery" id="DeepSea" style="display: none;">
+            <div class="slider">
+                <div class="slides">
+                    <img src="images/deepsea/deepsea1.jpg" alt="Deep Sea Image 1" class="current">
+                    <img src="images/deepsea/deepsea2.jpg" alt="Deep Sea Image 2">
+                    <img src="images/deepsea/deepsea3.jpg" alt="Deep Sea Image 3">
+                    <img src="images/deepsea/deepsea4.jpg" alt="Deep Sea Image 4">
+                    <img src="images/deepsea/deepsea5.jpg" alt="Deep Sea Image 5">
+                </div>
+                <figcaption></figcaption>
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
+            </div>
+        </div>
+
+        <div class="gallery" id="Mountains" style="display: none;">
+            <div class="slider">
+                <div class="slides">
+                    <img src="images/mountains/mountain1.jpg" alt="Mountains Image 1" class="current">
+                    <img src="images/mountains/mountain2.jpg" alt="Mountains Image 2">
+                    <img src="images/mountains/mountain3.jpg" alt="Mountains Image 3">
+                    <img src="images/mountains/mountain4.jpg" alt="Mountains Image 4">
+                    <img src="images/mountains/mountain5.jpg" alt="Mountains Image 5">
+                </div>
+                <figcaption></figcaption>
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

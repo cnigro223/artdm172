@@ -1,0 +1,141 @@
+body {
+    background-color: #f8f4e3;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #4a3c31;
+    margin: 20px 0;
+}
+
+nav {
+    background-color: #cfc6b5;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav a {
+    color: #4a3c31;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #b5a58f;
+    color: white;
+}
+
+.gallery {
+    margin: 20px auto;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slides {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.caption {
+    background-color: rgba(92, 89, 105, 0.8);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    font-size: 1.2em;
+}
+
+.hide {
+    display: none;
+}
+
+.prev,
+.next {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    color: rgb(200, 200, 200);
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    top: 50%; 
+    transform: translateY(-50%);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+img {
+    max-height: 600px;
+    object-fit: cover;
+    overflow: hidden;
+    width: 95%; 
+    border-radius: 8px;
+}
+
+.current {
+    animation: fade 1s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    img {
+        max-height: 480px;
+    }
+}
+
+@media only screen and (max-width: 699px) {
+    img {
+        max-height: 320px;
+        width: 100%;
+    }
+}
