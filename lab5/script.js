@@ -48,7 +48,22 @@ document.getElementById('pause').onclick = () => {
 // Set audio speed from the speed options
 document.querySelectorAll('.audio-speed').forEach(speedButton => {
     speedButton.onclick = () => {
-        const speed = parseFloat(speedButton.innerText);
-        audio.playbackRate = speed;
+        const speedText = speedButton.innerText;
+        if (speedText.includes('Slow')) {
+            audio.playbackRate = 0.5; // Set to half speed
+        } else if (speedText.includes('Normal')) {
+            audio.playbackRate = 1; // Set to normal speed
+        } else if (speedText.includes('Fast')) {
+            audio.playbackRate = 2; // Set to double speed
+        }
     };
 });
+
+// Audio volume controls
+document.getElementById('audioVolumeUp').onclick = () => {
+    audio.volume = Math.min(audio.volume + 0.1, 1); // Increase audio volume
+};
+
+document.getElementById('audioVolumeDown').onclick = () => {
+    audio.volume = Math.max(audio.volume - 0.1, 0); // Decrease audio volume
+};
