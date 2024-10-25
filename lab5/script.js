@@ -1,4 +1,5 @@
 const video = document.getElementById('videoPlayer');
+const audio = new Audio(); // Create an audio object
 
 document.getElementById('myplay').onclick = () => {
     video.play();
@@ -31,3 +32,23 @@ document.getElementById('volumeDown').onclick = () => {
 document.getElementById('mute').onclick = () => {
     video.muted = !video.muted; // Toggle mute
 };
+
+document.getElementById('play').onclick = () => {
+    const selectedSong = document.getElementById('pick').value;
+    if (selectedSong) {
+        audio.src = selectedSong;
+        audio.play();
+    }
+};
+
+document.getElementById('pause').onclick = () => {
+    audio.pause();
+};
+
+// Set audio speed from the speed options
+document.querySelectorAll('.audio-speed').forEach(speedButton => {
+    speedButton.onclick = () => {
+        const speed = parseFloat(speedButton.innerText);
+        audio.playbackRate = speed;
+    };
+});
