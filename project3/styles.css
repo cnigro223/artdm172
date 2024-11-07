@@ -1,0 +1,134 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Limit the width */
+}
+
+.video-container {
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures the video fits nicely */
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.controls button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.controls button:active {
+    transform: translateY(0);
+}
+
+.audio-controls {
+    background-color: #e0e0e0; /* Different background for audio controls */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.audio-controls h3, .audio-controls h4 {
+    margin: 10px 0; /* Consistent margin for headings */
+}
+
+.audio-controls .audio-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2ecc71; /* Different color for audio buttons */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 5px 0; /* Space between audio buttons */
+}
+
+.audio-controls .audio-button:hover {
+    background-color: #27ae60; /* Darker color on hover */
+}
+
+.audio-speed-options {
+    display: flex;
+    gap: 15px; /* Space between speed options */
+}
+
+.audio-speed {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #3498db; /* Same as video buttons */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.audio-speed:hover {
+    background-color: #2980b9; /* Darker on hover */
+}
+
+.audio-volume-controls {
+    margin-top: 10px; /* Space between speed options and volume controls */
+}
+
+.audio-volume-controls button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db; /* Same color as video buttons */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px; /* Space between volume buttons */
+}
+
+.audio-volume-controls button:hover {
+    background-color: #2980b9; /* Darker on hover */
+}
+
+#info {
+    text-align: center;
+    color: #555;
+}

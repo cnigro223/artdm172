@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Custom Video Player</h1>
+    </header>
+
+    <div class="player-container">
+        <div class="video-container">
+            <video id="videoPlayer" width="800" height="450" controls>
+                <source src="How_To_Make_A_CPU.mp4" type="video/mp4">
+                <track default kind="subtitles" srclang="en" src="caption/captions.vtt">
+            </video>        
+        </div>
+        
+        <div class="controls"> 
+            <button id="myplay">Play</button>
+            <button id="mypause">Pause</button>
+            <button id="slo">Slow Motion</button>
+            <button id="normal">Normal Speed</button>
+            <button id="fast">Fast Forward</button>
+            <button id="volumeUp">Volume Up</button>
+            <button id="volumeDown">Volume Down</button>
+            <button id="mute">Mute</button>
+        </div>
+
+        <div class="audio-controls">
+            <h3>Audio Controls</h3>
+            <p id="play" class="audio-button">Play</p>
+            <p id="pause" class="audio-button">Pause</p>
+            <select name="pick" id="pick">
+                <option value="">Song choices</option>
+                <option value="audio/boopboop.mp3">Boop Boop</option>
+                <option value="audio/doofdoof.mp3">Doof Doof</option>
+            </select>
+            <h4>Audio Speed</h4>
+            <div class="speed-options">
+                <p id="slo" class="audio-speed">0.5x (Slow)</p>
+                <p id="normalAudio" class="audio-speed">Normal</p>
+                <p id="ff" class="audio-speed">2x (Fast)</p>
+            </div>
+            <div class="audio-volume-controls">
+                <button id="audioVolumeUp">Audio Volume Up</button>
+                <button id="audioVolumeDown">Audio Volume Down</button>
+            </div>
+        </div>  
+    </div>
+
+    <article id="info"></article>
+</body>
+</html>
