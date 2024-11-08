@@ -1,3 +1,4 @@
+/* General Body and Layout */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
@@ -6,8 +7,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;  /* Ensures center alignment */
+    min-height: 100vh;  /* Make sure the content is vertically centered */
 }
 
+/* Header */
 header {
     text-align: center;
     margin-bottom: 20px;
@@ -17,25 +21,44 @@ h1 {
     color: #333;
 }
 
+/* Main Container (video and content side by side) */
 .player-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;  /* Aligns the video and content to the top */
+    flex-wrap: wrap;  /* Allows content to wrap on smaller screens */
+    gap: 20px;  /* Space between video and content */
     width: 100%;
-    max-width: 800px; /* Limit the width */
+    max-width: 1200px;  /* Limits the max width */
 }
 
+/* Video Section */
 .video-container {
+    flex: 1 1 45%;  /* 45% width on larger screens */
+    max-width: 800px;  /* Limits the video container */
     margin-bottom: 20px;
+}
+
+.video-container video {
+    width: 100%;  /* Makes the video responsive */
     border: 2px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ensures the video fits nicely */
+}
+
+/* Dynamic Media Controls */
+.dynamic-media-controls {
+    flex: 1 1 45%;  /* 45% width for controls */
+    max-width: 400px;  /* Limit controls container */
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .controls {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -60,75 +83,51 @@ h1 {
     transform: translateY(0);
 }
 
-.audio-controls {
-    background-color: #e0e0e0; /* Different background for audio controls */
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.audio-controls h3, .audio-controls h4 {
-    margin: 10px 0; /* Consistent margin for headings */
-}
-
-.audio-controls .audio-button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #2ecc71; /* Different color for audio buttons */
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    margin: 5px 0; /* Space between audio buttons */
-}
-
-.audio-controls .audio-button:hover {
-    background-color: #27ae60; /* Darker color on hover */
-}
-
-.audio-speed-options {
-    display: flex;
-    gap: 15px; /* Space between speed options */
-}
-
-.audio-speed {
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #3498db; /* Same as video buttons */
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.audio-speed:hover {
-    background-color: #2980b9; /* Darker on hover */
-}
-
-.audio-volume-controls {
-    margin-top: 10px; /* Space between speed options and volume controls */
-}
-
-.audio-volume-controls button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3498db; /* Same color as video buttons */
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin: 5px; /* Space between volume buttons */
-}
-
-.audio-volume-controls button:hover {
-    background-color: #2980b9; /* Darker on hover */
-}
-
-#info {
+/* Content Changes */
+.content-container {
+    flex: 1 1 45%;  /* 45% width on larger screens */
+    max-width: 400px;
     text-align: center;
-    color: #555;
+    margin-top: 20px;
+}
+
+#image-container img {
+    max-width: 100%;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+#heading, #text-content {
+    transition: opacity 1s ease-in-out;
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 1;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Layout for smaller screens */
+@media (max-width: 768px) {
+    .player-container {
+        flex-direction: column;  /* Stack the video and content vertically */
+        align-items: center;  /* Center-align content */
+    }
+
+    .dynamic-media-controls,
+    .content-container {
+        max-width: 100%;  /* Full width on smaller screens */
+    }
+
+    .content-container {
+        margin-top: 20px;  /* Add margin between video and content */
+    }
 }
