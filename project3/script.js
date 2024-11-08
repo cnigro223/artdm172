@@ -4,7 +4,7 @@ let myCues = [
     { seconds: 2, callback: func2 },    // "Smash the rock." (0:02)
     { seconds: 4, callback: func3 },    // "98% Silicon Dioxide" (0:07)
     { seconds: 17, callback: func4 },   // "Put into Crucible" (0:17)
-    { seconds: 19, callback: func5 },   // "Heat the Silicon" (0:19)
+    { seconds: 21, callback: func5 },   // "Heat the Silicon" (0:19)
     { seconds: 40, callback: func6 },   // "Photoresist on the Wafer" (0:40)
     { seconds: 50, callback: func7 },   // "Shine Laser Beam through Mask" (0:50)
     { seconds: 58, callback: func8 },   // "Develop the Photoresist" (0:58)
@@ -116,59 +116,59 @@ function inactiveVideoButton(button) {
 function func1() {
     document.querySelector("#image").src = "https://www.outdooressentialproducts.com/-/media/project/ufpi/outdoor-essentials/products/images/landscape/rocks/204923_small-landscape-rock-grey/outdoor-essentials_gray-landscape-small-rock_image_204923_website.png?h=1000&iar=0&w=1000&sc_lang=en&hash=56001ABA4842479768A556292C58B6E6"; // Image of rock
     document.querySelector("#heading").innerText = "Get a Rock";
-    document.querySelector("#text-content").innerText = "First, get a rock.";
+    document.querySelector("#text-content").innerText = "*Intense eye raise*";
 }
 
 function func2() {
     document.querySelector("#image").src = "https://media.istockphoto.com/id/1395346657/vector/heavy-hammer-hits-the-stones-extraction-of-ore-and-minerals-hard-physical-labor-cartoon.jpg?s=612x612&w=0&k=20&c=hJreX7lAsjlItO0V45GHGRIjRQDkpcyTvZkC1v03i7c="; // Image of smashing rock
     document.querySelector("#heading").innerText = "Smash the Rock";
-    document.querySelector("#text-content").innerText = "Then, smash the rock.";
+    document.querySelector("#text-content").innerText = "HAMMER!";
 }
 
 function func3() {
     document.querySelector("#image").src = "https://static.vecteezy.com/system/resources/previews/035/593/282/non_2x/ai-generated-realistic-nerd-emoji-face-ai-generative-free-png.png"; // Image of silicon dioxide
-    document.querySelector("#heading").innerText = "98% Silicon Dioxide";
-    document.querySelector("#text-content").innerText = "Now, you've got 98% concentrated silicon dioxide.";
+    document.querySelector("#heading").innerText = "Silicon Dioxide";
+    document.querySelector("#text-content").innerText = "Now you’ve got yourself some Silicon Dioxide! Totally know what this does!";
 }
 
 function func4() {
     document.querySelector("#image").src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmpmzg-LtHjio-4FzIc8W1AbzOuNDqSx048briO4OpNgpiqqb6pQvwenp-9xAYUkiP8UT87akdJ8uKPUF6eG_6MSkDZS2XbDBP2vjbUvl3HdYWWByUq36-WQVg1LNssqZUuun_qwbJwo6k/s1600/crucible.jpg"; // Image of polysilicon in crucible
     document.querySelector("#heading").innerText = "Put into Crucible";
-    document.querySelector("#text-content").innerText = "Put the polysilicon ingots into a crucible.";
+    document.querySelector("#text-content").innerText = "A blacksmith forging a magical weapon. This is where the magic happens!";
 }
 
 function func5() {
     document.querySelector("#image").src = "https://media.tenor.com/057tLu4ypTAAAAAe/elmo-burning-background.png"; // Image of heating silicon
     document.querySelector("#heading").innerText = "Heat the Silicon";
-    document.querySelector("#text-content").innerText = "Heat the silicon ingots to 1698 °K.";
+    document.querySelector("#text-content").innerText = "Turn up the heat! It’s getting hot in here. We need to heat that silicon to 1698 °K because why not? It’s not like it’s made of rocks or anything.";
 }
 
 function func6() {
     document.querySelector("#image").src = "https://www.biscuitpeople.com/media/cache/platform_full/5876a5f645034.jpg"; // Image of photoresist on wafer
     document.querySelector("#heading").innerText = "Photoresist on the Wafer";
-    document.querySelector("#text-content").innerText = "Put photoresist on the wafer.";
+    document.querySelector("#text-content").innerText = "Coat your wafer, yum.";
 }
 
 function func7() {
     document.querySelector("#image").src = "https://i.redd.it/my-laser-cat-second-slide-is-laser-eye-edit-v0-577p6vycqyl81.jpg?width=1125&format=pjpg&auto=webp&s=b9532df21a94bfeae535b7d58592587822af5985"; // Image of shining laser through mask
-    document.querySelector("#heading").innerText = "Shine Laser Beam through Mask";
-    document.querySelector("#text-content").innerText = "Take your chromium-etched photo-lithographic quartz mask and shine a laser beam through it onto the wafer.";
+    document.querySelector("#heading").innerText = "Shine Laser Beam";
+    document.querySelector("#text-content").innerText = "This part is super cool. Just like this cat.";
 }
 
 function func8() {
     document.querySelector("#image").src = "https://ent.uci.edu/learning-center/useful-links/images/How_to_Stop_Snoring_by_Head_and_Neck_Surgeon_Orange_County_1.jpg"; // Image of developing photoresist
     document.querySelector("#heading").innerText = "Develop the Photoresist";
-    document.querySelector("#text-content").innerText = "Now, develop the photoresist.";
+    document.querySelector("#text-content").innerText = "You're definetly paying attention...";
 }
 
 function func9() {
     document.querySelector("#image").src = "https://www.carpro-us.com/product_images/uploaded_images/dotfuk8zdk7uutxwigt5cjkucqdzhzq01643116809.jpg"; // Image of polishing wafer
     document.querySelector("#heading").innerText = "Chemical Mechanical Polishing";
-    document.querySelector("#text-content").innerText = "Now, do some chemical mechanical polishing.";
+    document.querySelector("#text-content").innerText = "Now, polish that wafer like it’s your grandma’s silverware.";
 }
 
 function func10() {
     document.querySelector("#image").src = "https://i.pinimg.com/736x/49/62/ee/4962ee8228258c179a707f7371a08d2b.jpg"; // Image of finished CPU
     document.querySelector("#heading").innerText = "Finished CPU";
-    document.querySelector("#text-content").innerText = "And that's how you make a CPU.";
+    document.querySelector("#text-content").innerText = "You’ve created the brain of a computer. cool.";
 }
