@@ -1,19 +1,24 @@
-// time frames are to keep myself organized
+// List of cue points with their respective callbacks
 let myCues = [
     { seconds: 0, callback: func1 },    // "First, get a rock." (0:00)
     { seconds: 2, callback: func2 },    // "Smash the rock." (0:02)
     { seconds: 4, callback: func3 },    // "98% Silicon Dioxide" (0:07)
     { seconds: 17, callback: func4 },   // "Put into Crucible" (0:17)
     { seconds: 21, callback: func5 },   // "Heat the Silicon" (0:19)
-    { seconds: 40, callback: func6 },   // "Photoresist on the Wafer" (0:40)
-    { seconds: 50, callback: func7 },   // "Shine Laser Beam through Mask" (0:50)
+    { seconds: 42, callback: func6 },   // "Photoresist on the Wafer" (0:40)
+    { seconds: 49, callback: func7 },   // "Shine Laser Beam through Mask" (0:50)
     { seconds: 58, callback: func8 },   // "Develop the Photoresist" (0:58)
-    { seconds: 72, callback: func9 },// "Chemical Mechanical Polishing" (1:12)
-    { seconds: 94, callback: func10 },// "And that's how you make a CPU." (1:38)
+    { seconds: 72, callback: func9 },   // "Chemical Mechanical Polishing" (1:12)
+    { seconds: 94, callback: func10 },  // "And that's how you make a CPU." (1:38)
 ];
 
 // Reference to the video element
 const videoPlayer = document.getElementById("videoPlayer");
+
+// Track if the cue has been triggered
+myCues.forEach((cue) => {
+    cue.triggered = false;
+});
 
 // Event listener for `timeupdate` to handle cue points
 videoPlayer.addEventListener("timeupdate", function () {
@@ -104,20 +109,17 @@ function inactiveVideoButton(button) {
     ];
     buttons.forEach((item) => {
         if (item !== button) {
-            item.style.backgroundColor = "gray";
+            item.style.backgroundColor = "#BDC3C7";
             item.style.color = "white";
         }
     });
-    button.style.backgroundColor = "darkred";
-    button.style.color = "yellow";
+    button.style.backgroundColor = "#2980B9";
+    button.style.color = "white";
 }
-
-// Reference to the body element
-const body = document.body;
 
 // Function to change background color based on image change
 function changeBackgroundColor(color) {
-    body.style.backgroundColor = color;
+    document.body.className = color;  // Dynamically set background class for each step
 }
 
 // Custom callback functions for the updated cue points
@@ -125,68 +127,68 @@ function func1() {
     document.querySelector("#image").src = "https://www.outdooressentialproducts.com/-/media/project/ufpi/outdoor-essentials/products/images/landscape/rocks/204923_small-landscape-rock-grey/outdoor-essentials_gray-landscape-small-rock_image_204923_website.png?h=1000&iar=0&w=1000&sc_lang=en&hash=56001ABA4842479768A556292C58B6E6"; // Image of rock
     document.querySelector("#heading").innerText = "Get a Rock";
     document.querySelector("#text-content").innerText = "*Intense eye raise*";
-    changeBackgroundColor("#A9A9A9");  //(rock color)
+    changeBackgroundColor("rock");
 }
 
 function func2() {
     document.querySelector("#image").src = "https://media.istockphoto.com/id/1395346657/vector/heavy-hammer-hits-the-stones-extraction-of-ore-and-minerals-hard-physical-labor-cartoon.jpg?s=612x612&w=0&k=20&c=hJreX7lAsjlItO0V45GHGRIjRQDkpcyTvZkC1v03i7c="; // Image of smashing rock
     document.querySelector("#heading").innerText = "Smash the Rock";
     document.querySelector("#text-content").innerText = "HAMMER!";
-    changeBackgroundColor("#D3D3D3");  //(smashing color)
+    changeBackgroundColor("smashing");
 }
 
 function func3() {
     document.querySelector("#image").src = "https://static.vecteezy.com/system/resources/previews/035/593/282/non_2x/ai-generated-realistic-nerd-emoji-face-ai-generative-free-png.png"; // Image of silicon dioxide
     document.querySelector("#heading").innerText = "Silicon Dioxide";
     document.querySelector("#text-content").innerText = "Now you’ve got yourself some Silicon Dioxide! Totally know what this does!";
-    changeBackgroundColor("#F0F8FF");  //(silicon color)
+    changeBackgroundColor("silicon");
 }
 
 function func4() {
     document.querySelector("#image").src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmpmzg-LtHjio-4FzIc8W1AbzOuNDqSx048briO4OpNgpiqqb6pQvwenp-9xAYUkiP8UT87akdJ8uKPUF6eG_6MSkDZS2XbDBP2vjbUvl3HdYWWByUq36-WQVg1LNssqZUuun_qwbJwo6k/s1600/crucible.jpg"; // Image of polysilicon in crucible
     document.querySelector("#heading").innerText = "Put into Crucible";
     document.querySelector("#text-content").innerText = "A blacksmith forging a magical weapon. This is where the magic happens!";
-    changeBackgroundColor("#C0C0C0");  //(crucible color)
+    changeBackgroundColor("crucible");
 }
 
 function func5() {
     document.querySelector("#image").src = "https://media.tenor.com/057tLu4ypTAAAAAe/elmo-burning-background.png"; // Image of heating silicon
     document.querySelector("#heading").innerText = "Heat the Silicon";
     document.querySelector("#text-content").innerText = "Turn up the heat! It’s getting hot in here. We need to heat that silicon to 1698 °K because why not? It’s not like it’s made of rocks or anything.";
-    changeBackgroundColor("#FF6347");  //(heating color)
+    changeBackgroundColor("heating");
 }
 
 function func6() {
     document.querySelector("#image").src = "https://www.biscuitpeople.com/media/cache/platform_full/5876a5f645034.jpg"; // Image of photoresist on wafer
     document.querySelector("#heading").innerText = "Photoresist on the Wafer";
     document.querySelector("#text-content").innerText = "Coat your wafer, yum.";
-    changeBackgroundColor("#FFFFE0");  //(photoresist color)
+    changeBackgroundColor("photoresist");
 }
 
 function func7() {
     document.querySelector("#image").src = "https://i.redd.it/my-laser-cat-second-slide-is-laser-eye-edit-v0-577p6vycqyl81.jpg?width=1125&format=pjpg&auto=webp&s=b9532df21a94bfeae535b7d58592587822af5985"; // Image of shining laser through mask
     document.querySelector("#heading").innerText = "Shine Laser Beam";
     document.querySelector("#text-content").innerText = "This part is super cool. Just like this cat.";
-    changeBackgroundColor("#8A2BE2");  //(laser color)
+    changeBackgroundColor("laser");
 }
 
 function func8() {
     document.querySelector("#image").src = "https://ent.uci.edu/learning-center/useful-links/images/How_to_Stop_Snoring_by_Head_and_Neck_Surgeon_Orange_County_1.jpg"; // Image of developing photoresist
     document.querySelector("#heading").innerText = "Develop the Photoresist";
     document.querySelector("#text-content").innerText = "You're definitely paying attention...";
-    changeBackgroundColor("#FFE4E1");  //(photoresist developing color)
+    changeBackgroundColor("developing");
 }
 
 function func9() {
     document.querySelector("#image").src = "https://www.carpro-us.com/product_images/uploaded_images/dotfuk8zdk7uutxwigt5cjkucqdzhzq01643116809.jpg"; // Image of polishing wafer
     document.querySelector("#heading").innerText = "Chemical Mechanical Polishing";
     document.querySelector("#text-content").innerText = "Now, polish that wafer like it’s your grandma’s silverware.";
-    changeBackgroundColor("#D3D3D3");  // Set background to light grey (polishing color)
+    changeBackgroundColor("polishing");
 }
 
 function func10() {
     document.querySelector("#image").src = "https://i.pinimg.com/736x/49/62/ee/4962ee8228258c179a707f7371a08d2b.jpg"; // Image of finished CPU
     document.querySelector("#heading").innerText = "Finished CPU";
     document.querySelector("#text-content").innerText = "You’ve created the brain of a computer. Cool.";
-    changeBackgroundColor("#98FB98");  // Set background to pale green (CPU finished color)
+    changeBackgroundColor("finished");
 }

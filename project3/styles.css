@@ -1,14 +1,15 @@
 /* General Body and Layout */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f4f7fc;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;  /* Ensures center alignment */
-    min-height: 100vh;  /* Make sure the content is vertically centered */
+    justify-content: center;
+    min-height: 100vh;
+    transition: background-color 0.5s ease;
 }
 
 /* Header */
@@ -18,101 +19,126 @@ header {
 }
 
 h1 {
-    color: #333;
+    color: #2C3E50;
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
 /* Main Container (video and content side by side) */
 .player-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;  /* Aligns the video and content to the top */
-    flex-wrap: wrap;  /* Allows content to wrap on smaller screens */
-    gap: 20px;  /* Space between video and content */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
     width: 100%;
-    max-width: 1200px;  /* Limits the max width */
+    max-width: 1200px;
 }
 
 /* Video Section */
 .video-container {
-    flex: 1 1 45%;  /* 45% width on larger screens */
-    max-width: 800px;  /* Limits the video container */
+    flex: 1 1 50%;
+    max-width: 800px;
     margin-bottom: 20px;
 }
 
 .video-container video {
-    width: 100%;  /* Makes the video responsive */
-    border: 2px solid #ccc;
+    width: 100%;
+    border: none;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.video-container video:hover {
+    transform: scale(1.05);
 }
 
 /* Dynamic Media Controls */
 .dynamic-media-controls {
-    flex: 1 1 45%;  /* 45% width for controls */
-    max-width: 400px;  /* Limit controls container */
-    background-color: #e0e0e0;
-    padding: 20px;
+    background-color: #ECF0F1;
+    padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .controls {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 15px;
 }
 
 .controls button {
-    padding: 10px 15px;
+    padding: 12px 18px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #3498db;
     color: white;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .controls button:hover {
     background-color: #2980b9;
-    transform: translateY(-2px);
+    transform: scale(1.05);
 }
 
 .controls button:active {
-    transform: translateY(0);
+    transform: scale(1);
+}
+
+.controls button:disabled {
+    background-color: #BDC3C7;
+    cursor: not-allowed;
 }
 
 /* Content Changes */
 .content-container {
-    flex: 1 1 45%;  /* 45% width on larger screens */
+    flex: 1 1 45%;
     max-width: 400px;
     text-align: center;
     margin-top: 20px;
-    overflow: hidden;  /* Prevents any content from overflowing */
+    overflow: hidden;
+    position: relative;
 }
 
 #image-container {
     width: 100%;
-    height: 300px;  /* Fixed height to keep images consistent */
-    overflow: hidden;  /* Ensures image doesn’t spill over its container */
+    height: 300px;
+    overflow: hidden;
     position: relative;
-    margin-bottom: 20px;  /* Space below images */
+    margin-bottom: 20px;
 }
 
 #image-container img {
-    width: 100%;  /* Ensure the image width fills the container */
-    height: 100%;  /* Makes sure the image fills the container vertically */
-    object-fit: cover;  /* Ensures the image maintains aspect ratio while covering the space */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-/* Fade-in animation */
-.fade-in {
+#image-container img.fade-in {
     opacity: 1;
-    animation: fadeIn 1s ease-out;
 }
 
+#heading {
+    font-size: 2rem;
+    color: #2C3E50;
+    margin-bottom: 15px;
+}
+
+#text-content {
+    font-size: 1.1rem;
+    color: #7F8C8D;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -125,16 +151,63 @@ h1 {
 /* Responsive Layout for smaller screens */
 @media (max-width: 768px) {
     .player-container {
-        flex-direction: column;  /* Stack the video and content vertically */
-        align-items: center;  /* Center-align content */
+        flex-direction: column;
+        align-items: center;
     }
 
     .dynamic-media-controls,
     .content-container {
-        max-width: 100%;  /* Full width on smaller screens */
+        max-width: 100%;
+        margin-top: 20px;
     }
 
-    .content-container {
-        margin-top: 20px;  /* Add margin between video and content */
+    .video-container {
+        max-width: 100%;
     }
+}
+
+/* Dynamic Background Transitions */
+body {
+    transition: background-color 1s ease;
+}
+
+/* Specific backgrounds for each function */
+body.rock {
+    background-color: #A9A9A9;
+}
+
+body.smashing {
+    background-color: #D3D3D3;
+}
+
+body.silicon {
+    background-color: #F0F8FF;
+}
+
+body.crucible {
+    background-color: #181008;
+}
+
+body.heating {
+    background-color: #FF6347;
+}
+
+body.photoresist {
+    background-color: #FFFFE0;
+}
+
+body.laser {
+    background-color: #8A2BE2;
+}
+
+body.develop {
+    background-color: #FFE4E1;
+}
+
+body.polishing {
+    background-color: #D3D3D3;
+}
+
+body.finished {
+    background-color: #98FB98;
 }
