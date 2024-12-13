@@ -1,0 +1,114 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #eaeaea;
+    color: #333;
+    text-align: center;
+    padding: 30px;
+    margin: 0;
+    background-image: url('images/dirty-old-black-shirt.png');
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #f1f1f1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button:hover {
+    background-color: #f44336;
+}
+
+.gallery {
+    display: grid;
+    /* Adjusted the number of columns to 4 and reduced the min-width for images */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 16px;
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid #444;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+#favorites-list {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding: 10px;
+}
+
+#favorites-list img {
+    border-radius: 10px;
+    width: 150px;
+    height: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #333;
+    transition: transform 0.3s ease;
+}
+
+#favorites-list img:hover {
+    transform: scale(1.1);
+}
+
+/* Position the Remove button ("X") in the bottom-right corner of saved images */
+.favorite-card {
+    position: relative;
+    display: inline-block;
+}
+
+.remove-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
