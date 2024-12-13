@@ -1,4 +1,4 @@
-const API_KEY = 'Sg3_s4kPbotelA3hLkSR3s9tmiuWvei3qWS6UGI1A98'; // Replace with your actual Unsplash API key
+const API_KEY = 'Blank'; // Replace with your actual Unsplash API key
 
 // DOM Elements
 const tattooGallery = document.getElementById('tattoo-gallery');
